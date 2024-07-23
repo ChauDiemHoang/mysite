@@ -60,7 +60,7 @@ ROOT_URLCONF = 'locallibrary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['django_projects/locallibrary/catalog/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
