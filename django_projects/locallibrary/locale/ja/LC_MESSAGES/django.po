@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-29 13:59+0700\n"
+"POT-Creation-Date: 2024-07-30 08:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,11 +42,11 @@ msgstr "この本のジャンルを選択してください"
 msgid "Unique ID for this particular book across whole library"
 msgstr "ライブラリ全体でこの特定の本の一意の ID"
 
-#: catalog/models.py:40
+#: catalog/models.py:44
 msgid "Book availability"
 msgstr "本の入手可能性"
 
-#: catalog/models.py:68
+#: catalog/models.py:73
 msgid "Death date cannot be before birth date."
 msgstr "死去日は次の日付より前には設定できません生年月日"
 
@@ -61,3 +61,68 @@ msgstr "すべての書籍"
 #: catalog/templates/base_generic.html:20
 msgid "All authors"
 msgstr "すべての著者"
+
+#: catalog/templates/catalog/author_detail.html:3
+#: catalog/templates/catalog/book_detail.html:4
+#, fuzzy
+#| msgid "All authors"
+msgid "Author"
+msgstr "すべての著者"
+
+#: catalog/templates/catalog/author_detail.html:4
+msgid "First name"
+msgstr "名"
+
+#: catalog/templates/catalog/author_detail.html:5
+msgid "Last name"
+msgstr "姓"
+
+#: catalog/templates/catalog/author_detail.html:6
+msgid "Date of birth"
+msgstr "生年月日"
+
+#: catalog/templates/catalog/author_detail.html:7
+msgid "Date of death"
+msgstr "死亡日"
+
+#: catalog/templates/catalog/author_detail.html:9
+msgid "Books by"
+msgstr "著者の書籍"
+
+#: catalog/templates/catalog/author_detail.html:14
+msgid "No books available for this author."
+msgstr "この著者の書籍はありません"
+
+#: catalog/templates/catalog/author_list.html:4
+#, fuzzy
+#| msgid "All authors"
+msgid "Author List"
+msgstr "すべての著者"
+
+#: catalog/templates/catalog/author_list.html:14
+msgid "There are author in the library"
+msgstr "ライブラリに著者がいます"
+
+#: catalog/templates/catalog/book_detail.html:3
+msgid "Title"
+msgstr "タイトル"
+
+#: catalog/templates/catalog/book_detail.html:5
+msgid "Summary"
+msgstr "概要"
+
+#: catalog/templates/catalog/book_detail.html:7
+msgid "Language"
+msgstr "言語"
+
+#: catalog/templates/catalog/book_detail.html:8
+msgid "Genre"
+msgstr "ジャンル"
+
+#: catalog/templates/catalog/book_list.html:4
+msgid "Book List"
+msgstr "書籍リスト"
+
+#: catalog/templates/catalog/book_list.html:14
+msgid "There are no books in the library"
+msgstr "ライブラリに本がありません"
