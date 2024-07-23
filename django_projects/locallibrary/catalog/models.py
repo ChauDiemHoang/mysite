@@ -30,14 +30,19 @@ class BookInstance(models.Model):
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
 
-    LOAN_STATUS = (
-        ('m', 'Maintenance'),
-        ('o', 'On loan'),
-        ('a', 'Available'),
-        ('r', 'Reserved'),
-    )
+    class LOAN_STATUS(models.TextChoices):
+        MAINTENANCE = 'm', 'Maintenance'
+        ON_LOAN = 'o', 'On loan'
+        AVAILABLE = 'a', 'Available'
+        RESERVED = 'r', 'Reserved'
 
-    status = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='m', help_text=_('Book availability'))
+    status = models.CharField(
+        max_length=1,
+        choices=LOAN_STATUS.choices,
+        blank=True,
+        default="m",
+        help_text=_("Book availability"),
+    )
 
     class Meta:
         ordering = ['due_back']

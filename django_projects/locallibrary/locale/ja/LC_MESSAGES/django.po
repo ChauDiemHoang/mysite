@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-25 08:57+0000\n"
+"POT-Creation-Date: 2024-07-29 13:59+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
 #: catalog/models.py:8
 msgid "Enter a book genre (e.g. Science Fiction)"
 msgstr "本のジャンルを入力してください (例: SF)"
@@ -29,7 +30,8 @@ msgstr "本の簡単な説明を入力してください"
 msgid ""
 "13 Character <a href=\"https://www.isbn-international.org/content/what-"
 "isbn\">ISBN number</a>"
-msgstr "13 文字の <a href=\"https://www.isbn-international.org/content/what-"
+msgstr ""
+"13 文字の <a href=\"https://www.isbn-international.org/content/what-"
 "isbn\">ISBN 番号</a>"
 
 #: catalog/models.py:19
@@ -47,3 +49,15 @@ msgstr "本の入手可能性"
 #: catalog/models.py:68
 msgid "Death date cannot be before birth date."
 msgstr "死去日は次の日付より前には設定できません生年月日"
+
+#: catalog/templates/base_generic.html:18
+msgid "Home"
+msgstr "ホーム"
+
+#: catalog/templates/base_generic.html:19
+msgid "All books"
+msgstr "すべての書籍"
+
+#: catalog/templates/base_generic.html:20
+msgid "All authors"
+msgstr "すべての著者"
