@@ -10,7 +10,11 @@
         {% if perms.catalog.can_mark_returned %}
           <form action="{% url 'return-book' bookinst.id %}" method="post">
             {% csrf_token %}
+<<<<<<< HEAD
             <input type="submit" value="Return" class="btn btn-primary">
+=======
+            <button type="submit" class="btn btn-primary">Return</button>
+>>>>>>> 9538459 (Django Tutorial Part 8: User authentication and permissions)
           </form>
         {% endif %}
       </li>
@@ -19,4 +23,8 @@
   {% else %}
     <p>No books currently borrowed.</p>
   {% endif %}
+<<<<<<< HEAD
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> 9538459 (Django Tutorial Part 8: User authentication and permissions)
