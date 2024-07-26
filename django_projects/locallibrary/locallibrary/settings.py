@@ -60,11 +60,7 @@ ROOT_URLCONF = 'locallibrary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
         'DIRS': [os.path.join(BASE_DIR, 'catalog/templates')],
-=======
-        'DIRS': ['django_projects/locallibrary/catalog/templates'],
->>>>>>> 4cd2e43 (Django Tutorial Part 6: Generic list and detail views)
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
