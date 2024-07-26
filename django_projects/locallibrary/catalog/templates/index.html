@@ -11,4 +11,6 @@
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
   </ul>
+  {% load i18n %}
+    <p>{% blocktrans count num_visits=num_visits %}You have visited this page {{ num_visits }} time{% plural %}You have visited this page {{ num_visits }} times{% endblocktrans %}</p>
 {% endblock %}
