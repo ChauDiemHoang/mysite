@@ -1,12 +1,15 @@
-from typing import Any
 from django.shortcuts import render
 from catalog.models import Book, Author, BookInstance, Genre
 from django.views import View, generic
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from django.http import HttpResponseForbidden
+from django.http import HttpResponseForbidden, HttpResponseRedirect
 from django.views.decorators.http import require_POST
+from django.urls import reverse, reverse_lazy
+from catalog.forms import RenewBookForm
+import datetime
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 def index(request):
     num_books = Book.objects.all().count()
@@ -79,6 +82,21 @@ class LoanedBooksByUserListView(LoginRequiredMixin, PermissionRequiredMixin, gen
     def get_context_data(self, **kwargs):
         context = super(LoanedBooksByUserListView, self).get_context_data(**kwargs)
         return context
+    
+class LoanedBooksAllListView(LoginRequiredMixin, PermissionRequiredMixin, generic.ListView):
+    model = BookInstance
+    login_url = '/accounts/login/'
+    redirect_field_name = 'next'
+    context_object_name = 'bookinstance_list'
+    template_name = 'catalog/bookinstance_list_borrowed_all.html'
+    permission_required = 'catalog.catalog.change_bookinstance'
+
+    def get_queryset(self):
+        return BookInstance.objects.filter(status__exact='o').order_by('due_back')
+
+    def get_context_data(self, **kwargs):
+        context = super(LoanedBooksAllListView, self).get_context_data(**kwargs)
+        return context
 
 @login_required
 @permission_required('catalog.can_mark_returned')
@@ -94,3 +112,40 @@ def return_book(request, pk):
     book_instance.save()
     
     return redirect('my-borrowed')
+
+@login_required
+@permission_required('catalog.can_mark_returned')
+def renew_book_librarian(request, pk):
+    book_instance = get_object_or_404(BookInstance, pk=pk)
+    
+    if request.method == 'POST':
+        form = RenewBookForm(request.POST)
+        
+        if form.is_valid():
+            book_instance.due_back = form.cleaned_data['renewal_date']
+            book_instance.save()
+            return HttpResponseRedirect(reverse('all-borrowed'))
+    
+        else:
+            proposed_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
+            form = RenewBookForm(initial={'renewal_date': proposed_renewal_date})
+
+    context = {
+        'form': form,
+        'book_instance': book_instance,
+    }
+
+    return render(request, 'catalog/book_renew_librarian.html', context)
+
+class AuthorCreate(CreateView):
+    model = Author
+    fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
+    initial = {'date_of_death': '11/06/2021'}
+
+class AuthorUpdate(UpdateView):
+    model = Author
+    fields = '__all__'
+
+class AuthorDelete(DeleteView):
+    model = Author
+    success_url = reverse_lazy('authors')

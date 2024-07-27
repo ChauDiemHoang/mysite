@@ -20,6 +20,12 @@
           {% if user.is_authenticated %}
               <li>User: {{ user.get_username }}</li>
               <li><a href="{% url 'my-borrowed' %}">My borrowed</a></li>
+              {% if perms.catalog.change_bookinstance %}
+              <li>Staff</li>
+              <li>  
+                  <a href="{% url 'all-borrowed' %}">All borrowed</a>
+              </li>
+              {% endif %}
               <li>
                 <form method="post" action="{% url 'logout' %}?next={{ request.path }}">
                   {% csrf_token %}
