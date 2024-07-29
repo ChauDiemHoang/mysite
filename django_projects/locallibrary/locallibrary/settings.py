@@ -118,6 +118,7 @@ LANGUAGE_CODE = 'en-us'
 LANGUAGES = [
     ('en','English'),
     ('vi', 'Vietnamese'),
+    ('ja', 'Japanese'),
 ]
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
