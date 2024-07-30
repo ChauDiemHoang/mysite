@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-25 05:27+0000\n"
+"POT-Creation-Date: 2024-07-29 13:58+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,8 +30,9 @@ msgstr "Nhập mô tả ngắn gọn về cuốn sách"
 msgid ""
 "13 Character <a href=\"https://www.isbn-international.org/content/what-"
 "isbn\">ISBN number</a>"
-msgstr "13 ký tự <a href=\"https://www.isbn-international.org/content/what-"
-"isbn\">Số ISBN</a>"
+msgstr ""
+"13 ký tự <a href=\"https://www.isbn-international.org/content/what-isbn\">Số "
+"ISBN</a>"
 
 #: catalog/models.py:19
 msgid "Select a genre for this book"
@@ -48,3 +49,15 @@ msgstr "Tính khả dụng của sách"
 #: catalog/models.py:68
 msgid "Death date cannot be before birth date."
 msgstr "Ngày chết không được trước ngày sinh."
+
+#: catalog/templates/base_generic.html:18
+msgid "Home"
+msgstr "Trang chủ"
+
+#: catalog/templates/base_generic.html:19
+msgid "All books"
+msgstr "Toàn bộ sách"
+
+#: catalog/templates/base_generic.html:20
+msgid "All authors"
+msgstr "Toàn bộ tác giả"
