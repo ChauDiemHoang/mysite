@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %} 
+{% block content %}
+{% load i18n %}
+  <h1>{% trans 'Author' %}</h1>
+  <p><strong>{% trans 'First name' %}:</strong>{{ author.first_name }}</a></p>
+  <p><strong>{% trans 'Last name' %}:</strong> {{ author.last_name }}</p>
+  <p><strong>{% trans 'Date of birth' %}:</strong> {{ author.date_of_birth }}</p>
+  <p><strong>{% trans 'Date of death' %}:</strong> {{ author.date_of_death }}</p>
+  <div class="detail">
+    <h2>{% trans 'Books by' %}  {{ author }}</h2>
+    <ul>
+        {% for book in books %}
+            <li> <a href="{{ book.get_absolute_url }}">{{ book.title }}</a></li>
+        {% empty %}
+            <li>{% trans 'No books available for this author.' %}</li>
+        {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}
