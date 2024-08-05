@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-30 08:43+0000\n"
+"POT-Creation-Date: 2024-08-02 13:14+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,67 +62,73 @@ msgstr "Toàn bộ sách"
 msgid "All authors"
 msgstr "Toàn bộ tác giả"
 
-#: catalog/templates/catalog/author_detail.html:3
-#: catalog/templates/catalog/book_detail.html:4
+#: catalog/templates/catalog/author_detail.html:4
+#: catalog/templates/catalog/book_detail.html:5
 #, fuzzy
 #| msgid "All authors"
 msgid "Author"
 msgstr "Toàn bộ tác giả"
 
-#: catalog/templates/catalog/author_detail.html:4
+#: catalog/templates/catalog/author_detail.html:5
 msgid "First name"
 msgstr "Tên"
 
-#: catalog/templates/catalog/author_detail.html:5
+#: catalog/templates/catalog/author_detail.html:6
 msgid "Last name"
 msgstr "Họ"
 
-#: catalog/templates/catalog/author_detail.html:6
+#: catalog/templates/catalog/author_detail.html:7
 msgid "Date of birth"
 msgstr "Ngày sinh"
 
-#: catalog/templates/catalog/author_detail.html:7
+#: catalog/templates/catalog/author_detail.html:8
 msgid "Date of death"
 msgstr "Ngày mất"
 
-#: catalog/templates/catalog/author_detail.html:9
+#: catalog/templates/catalog/author_detail.html:10
 msgid "Books by"
 msgstr "Sách bởi"
 
-#: catalog/templates/catalog/author_detail.html:14
+#: catalog/templates/catalog/author_detail.html:15
 msgid "No books available for this author."
 msgstr "Không có sách nào khả dụng của tác giả này"
 
-#: catalog/templates/catalog/author_list.html:4
+#: catalog/templates/catalog/author_list.html:5
 #, fuzzy
 #| msgid "All authors"
 msgid "Author List"
 msgstr "Toàn bộ tác giả"
 
-#: catalog/templates/catalog/author_list.html:14
+#: catalog/templates/catalog/author_list.html:15
 msgid "There are author in the library"
 msgstr "Không có tác giả nào"
 
-#: catalog/templates/catalog/book_detail.html:3
+#: catalog/templates/catalog/book_detail.html:4
 msgid "Title"
 msgstr "Tiêu đề"
 
-#: catalog/templates/catalog/book_detail.html:5
+#: catalog/templates/catalog/book_detail.html:6
 msgid "Summary"
 msgstr "Giới thiệu"
 
-#: catalog/templates/catalog/book_detail.html:7
+#: catalog/templates/catalog/book_detail.html:8
 msgid "Language"
 msgstr "Ngôn ngữ"
 
-#: catalog/templates/catalog/book_detail.html:8
+#: catalog/templates/catalog/book_detail.html:9
 msgid "Genre"
 msgstr "Thể loại"
 
-#: catalog/templates/catalog/book_list.html:4
+#: catalog/templates/catalog/book_list.html:5
 msgid "Book List"
 msgstr "Danh sách sách"
 
-#: catalog/templates/catalog/book_list.html:14
+#: catalog/templates/catalog/book_list.html:15
 msgid "There are no books in the library"
 msgstr "Không có cuốn sách nào"
+
+#: catalog/templates/index.html:15
+#, fuzzy, python-format
+msgid "You have visited this page %(num_visits)s time"
+msgid_plural "You have visited this page %(num_visits)s times"
+msgstr[0] "Bạn đã ghé thăm trang này %(num_visits) lần\n"
